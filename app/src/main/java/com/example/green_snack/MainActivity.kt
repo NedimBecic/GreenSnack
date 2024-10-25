@@ -16,30 +16,20 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         binding = ActivityMainBinding.inflate(layoutInflater)
+       setContentView(binding.root)
+     replaceFragment(Home())
 
-        setContentView(R.layout.food_preferences_info_activity)
-//        setContentView(binding.root)
-//        replaceFragment(Home())
-//
-//        binding.bottomNavigationView.setOnItemSelectedListener {
-//            when(it.itemId){
-//                R.id.home -> replaceFragment(Home())
-//                R.id.plan -> replaceFragment(WeekPlan())
-//                R.id.stats -> replaceFragment(Stats())
-//                R.id.profile -> replaceFragment(Profile())
-//                else ->{
-//                }
-//            }
-//            true
-//        }
-
-        val recyclerView: RecyclerView = findViewById(R.id.categoryRecyclerView)
-        recyclerView.layoutManager = GridLayoutManager(this, 4)
-        recyclerView.addItemDecoration(SpaceItemDecoration(16))
-
-        val categoryItems = CategoryData.getCategories()
-        val adapter = CategoryAdapter(categoryItems)
-        recyclerView.adapter = adapter
+       binding.bottomNavigationView.setOnItemSelectedListener {
+           when(it.itemId){
+               R.id.home -> replaceFragment(Home())
+               R.id.plan -> replaceFragment(WeekPlan())
+               R.id.stats -> replaceFragment(Stats())
+              R.id.profile -> replaceFragment(Profile())
+              else ->{
+               }
+          }
+          true
+      }
 
 
     }
