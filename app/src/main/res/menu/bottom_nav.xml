@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:title="Početna"
+        android:id="@+id/home"
+        android:icon="@drawable/baseline_home_24"/>
+    <item android:title="Plan"
+        android:id="@+id/plan"
+        android:icon="@drawable/week_icon"/>
+    <item android:title="Statistika"
+        android:id="@+id/stats"
+        android:icon="@drawable/chart_646"/>
+    <item android:title="Profil"
+        android:id="@+id/profile"
+        android:icon="@drawable/profile_user_account_svgrepo_com"/>
+</menu>
