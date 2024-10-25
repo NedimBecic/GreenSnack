@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="24dp"
+    android:background="#FFFFFF"
+    >
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="wrap_content"
+        android:layout_height="120dp"
+        android:layout_marginTop="72dp"
+        app:srcCompat="@drawable/logo" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="@string/personalni_detalji"
+        android:textSize="24sp"
+        android:textColor="#333333"
+        android:fontFamily="@font/montserrat_bold"
+        android:layout_gravity="center"
+        android:layout_marginBottom="24dp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_marginBottom="32dp">
+
+        <TextView
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:background="@drawable/circle_primary"
+            android:gravity="center"
+            android:text="1"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            android:fontFamily="@font/montserrat_regular"
+            android:layout_marginEnd="16dp" />
+
+        <TextView
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:background="@drawable/circle_primary_active"
+            android:gravity="center"
+            android:text="2"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            android:fontFamily="@font/montserrat_regular"
+            android:layout_marginEnd="16dp" />
+
+        <TextView
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:background="@drawable/circle_primary_inactive"
+            android:gravity="center"
+            android:text="3"
+            android:textColor="@color/primary"
+            android:textSize="18sp"
+            android:fontFamily="@font/montserrat_regular" />
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/Bolesti"
+        android:textSize="18sp"
+        android:textColor="#333333"
+        android:fontFamily="@font/montserrat_bold"
+        android:layout_marginBottom="8dp" />
+
+    <EditText
+        android:id="@+id/bolestiEditText"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:background="@drawable/edittext_bkg"
+        android:hint="@string/unesite_bolesti"
+        android:padding="12dp"
+        android:gravity="top"
+        android:textColor="#000000"
+        android:textColorHint="#AAAAAA"
+        android:fontFamily="@font/montserrat_regular"
+        android:inputType="textMultiLine"
+        android:layout_marginBottom="32dp"
+        android:scrollbars="vertical" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/Alergije"
+        android:textSize="18sp"
+        android:textColor="#333333"
+        android:fontFamily="@font/montserrat_bold"
+        android:layout_marginBottom="8dp" />
+
+    <EditText
+        android:id="@+id/alergijeEditText"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:background="@drawable/edittext_bkg"
+        android:hint="@string/unesite_alergije"
+        android:padding="12dp"
+        android:gravity="top"
+        android:textColor="#000000"
+        android:textColorHint="#AAAAAA"
+        android:fontFamily="@font/montserrat_regular"
+        android:inputType="textMultiLine"
+        android:layout_marginBottom="120dp"
+        android:scrollbars="vertical" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center">
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/prevButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/prethodni"
+            android:textAllCaps="false"
+            android:drawableLeft="@drawable/arrow_back"
+            android:drawablePadding="8dp"
+            android:layout_marginEnd="8dp"
+            android:background="@drawable/outlined_buttonbkg"
+            android:textColor="@color/primary"
+            android:fontFamily="@font/montserrat_regular"
+            android:padding="12dp" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/nextButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/sljedeci"
+            android:textAllCaps="false"
+            android:drawableRight="@drawable/arrow_forward"
+            android:drawablePadding="8dp"
+            android:background="@drawable/buttonbkg"
+            android:textColor="#FFFFFF"
+            android:fontFamily="@font/montserrat_regular"
+            android:padding="12dp" />
+    </LinearLayout>
+
+</LinearLayout>
