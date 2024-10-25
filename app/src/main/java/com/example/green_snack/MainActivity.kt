@@ -14,8 +14,8 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         binding = ActivityMainBinding.inflate(layoutInflater)
-        setContentView(R.layout.activity_main)
         setContentView(binding.root)
+        binding.bottomNavigationView.selectedItemId = R.id.home
         replaceFragment(Home())
 
         binding.bottomNavigationView.setOnItemSelectedListener {
