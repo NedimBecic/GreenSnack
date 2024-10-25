@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="24dp"
+    android:background="@color/white"
+    tools:context=".FormActivity">
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="wrap_content"
+        android:layout_height="120dp"
+        android:layout_marginTop="72dp"
+        app:srcCompat="@drawable/logo" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="@string/personalni_detalji"
+        android:textSize="24sp"
+        android:textColor="#333333"
+        android:fontFamily="@font/montserrat_bold"
+        android:layout_gravity="center"
+        android:layout_marginBottom="24dp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_marginBottom="32dp">
+
+        <TextView
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:background="@drawable/circle_primary"
+            android:gravity="center"
+            android:text="1"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            android:fontFamily="@font/montserrat_regular"
+            android:layout_marginEnd="16dp" />
+
+        <TextView
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:background="@drawable/circle_primary_inactive"
+            android:gravity="center"
+            android:text="2"
+            android:textColor="@color/primary"
+            android:textSize="18sp"
+            android:fontFamily="@font/montserrat_regular"
+            android:layout_marginEnd="16dp" />
+
+        <TextView
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:background="@drawable/circle_primary_inactive"
+            android:gravity="center"
+            android:text="3"
+            android:textColor="@color/primary"
+            android:textSize="18sp"
+            android:fontFamily="@font/montserrat_regular" />
+    </LinearLayout>
+
+    <EditText
+        android:id="@+id/firstLastNameEditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:hint="@string/ime"
+        android:background="@drawable/edittext_bkg"
+        android:padding="12dp"
+        android:textColor="#000000"
+        android:textColorHint="#AAAAAA"
+        android:fontFamily="@font/montserrat_regular"
+        android:layout_marginBottom="24dp" />
+
+    <Spinner
+        android:id="@+id/genderSpinner"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:background="@drawable/edittext_bkg"
+        android:padding="12dp"
+        android:fontFamily="@font/montserrat_regular"
+        android:layout_marginBottom="24dp"
+        android:spinnerMode="dropdown"
+        />
+
+    <EditText
+        android:id="@+id/dobEditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:hint="@string/datum_rodjenja"
+        android:background="@drawable/edittext_bkg"
+        android:padding="12dp"
+        android:textColor="#000000"
+        android:textColorHint="#AAAAAA"
+        android:fontFamily="@font/montserrat_regular"
+        android:layout_marginBottom="24dp"
+        android:inputType="date" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginBottom="24dp">
+
+        <EditText
+            android:id="@+id/weightEditText"
+            android:layout_width="0dp"
+            android:layout_marginTop="12dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:hint="@string/kilaza"
+            android:background="@drawable/edittext_bkg"
+            android:padding="12dp"
+            android:textColor="#000000"
+            android:textColorHint="#AAAAAA"
+            android:fontFamily="@font/montserrat_regular"
+            android:inputType="numberDecimal" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:text="@string/kg"
+            android:textColor="#888888"
+            android:layout_gravity="center_vertical"
+            android:paddingStart="8dp"
+            android:fontFamily="@font/montserrat_regular" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginBottom="128dp">
+
+        <EditText
+            android:id="@+id/heightEditText"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:layout_weight="1"
+            android:hint="@string/visina"
+            android:background="@drawable/edittext_bkg"
+            android:padding="12dp"
+            android:textColor="#000000"
+            android:textColorHint="#AAAAAA"
+            android:fontFamily="@font/montserrat_regular"
+            android:inputType="numberDecimal" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/m"
+            android:textColor="#888888"
+            android:layout_gravity="center_vertical"
+            android:paddingStart="8dp"
+            android:fontFamily="@font/montserrat_regular" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center">
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/prevButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/prethodni"
+            android:textAllCaps="false"
+            android:drawableLeft="@drawable/arrow_back"
+            android:drawablePadding="8dp"
+            android:layout_marginEnd="8dp"
+            android:background="@drawable/outlined_buttonbkg"
+            android:textColor="@color/primary"
+            android:fontFamily="@font/montserrat_regular"
+            android:padding="12dp" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/nextButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/sljedeci"
+            android:textAllCaps="false"
+            android:drawableRight="@drawable/arrow_forward"
+            android:drawablePadding="8dp"
+            android:background="@drawable/buttonbkg"
+            android:textColor="@color/white"
+            android:fontFamily="@font/montserrat_regular"
+            android:padding="12dp" />
+    </LinearLayout>
+
+</LinearLayout>

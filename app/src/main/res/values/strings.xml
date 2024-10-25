@@ -1,5 +1,22 @@
 <resources>
     <string name="app_name">Green_Snack</string>
-    <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="intro_text"> Dobrodošli u Green Snack!
+    Odaberite ekološki prihvatljivu hranu i uštedite, otkrivajući namirnice koje smanjuju otpad, ugljični otisak i troškove!
+    </string>
+    <string name="zapocni">Započni</string>
+    <string name="personalni_detalji">Vaši personalni detalji</string>
+    <string name="ime">Ime i Prezime</string>
+    <string name="datum_rodjenja">Datum Rođenja (DD/MM/YYYY)</string>
+    <string name="kilaza">Kilaža</string>
+    <string name="kg">kg</string>
+    <string name="visina">Visina</string>
+    <string name="m">m</string>
+    <string name="Bolesti">Bolesti</string>
+    <string name="Alergije">Alergije</string>
+    <string name="unesite_bolesti">Unesite bolesti</string>
+    <string name="unesite_alergije">Unesite alergije</string>
+    <string name="prethodni">Prethodni</string>
+    <string name="sljedeci">Sljedeći</string>
+    <string name="jela_u_danu">Unesite broj jela u danu</string>
 </resources>

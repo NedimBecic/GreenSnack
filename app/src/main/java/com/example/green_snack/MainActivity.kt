@@ -6,7 +6,9 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.fragment.app.Fragment
+import androidx.recyclerview.widget.RecyclerView
 import com.example.green_snack.databinding.ActivityMainBinding
+import androidx.recyclerview.widget.GridLayoutManager
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding : ActivityMainBinding
@@ -14,21 +16,30 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         binding = ActivityMainBinding.inflate(layoutInflater)
-        setContentView(R.layout.activity_main)
-        setContentView(binding.root)
-        replaceFragment(Home())
+        setContentView(R.layout.food_preferences_info_activity)
+//        setContentView(binding.root)
+//        replaceFragment(Home())
+//
+//        binding.bottomNavigationView.setOnItemSelectedListener {
+//            when(it.itemId){
+//                R.id.home -> replaceFragment(Home())
+//                R.id.plan -> replaceFragment(WeekPlan())
+//                R.id.stats -> replaceFragment(Stats())
+//                R.id.profile -> replaceFragment(Profile())
+//                else ->{
+//                }
+//            }
+//            true
+//        }
 
-        binding.bottomNavigationView.setOnItemSelectedListener {
-            when(it.itemId){
-                R.id.home -> replaceFragment(Home())
-                R.id.plan -> replaceFragment(WeekPlan())
-                R.id.stats -> replaceFragment(Stats())
-                R.id.profile -> replaceFragment(Profile())
-                else ->{
-                }
-            }
-            true
-        }
+        val recyclerView: RecyclerView = findViewById(R.id.categoryRecyclerView)
+        recyclerView.layoutManager = GridLayoutManager(this, 4)
+        recyclerView.addItemDecoration(SpaceItemDecoration(16))
+
+        val categoryItems = CategoryData.getCategories()
+        val adapter = CategoryAdapter(categoryItems)
+        recyclerView.adapter = adapter
+
 
     }
     private fun replaceFragment(fragment : Fragment){
