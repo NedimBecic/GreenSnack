@@ -16,6 +16,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         binding = ActivityMainBinding.inflate(layoutInflater)
+
         setContentView(R.layout.food_preferences_info_activity)
 //        setContentView(binding.root)
 //        replaceFragment(Home())

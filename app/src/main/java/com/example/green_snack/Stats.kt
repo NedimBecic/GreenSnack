@@ -1,10 +1,15 @@
 package com.example.green_snack
 
+import android.graphics.Color
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.github.mikephil.charting.charts.LineChart
+import com.github.mikephil.charting.data.Entry
+import com.github.mikephil.charting.data.LineData
+import com.github.mikephil.charting.data.LineDataSet
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -34,7 +39,33 @@ class Stats : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_stats, container, false)
+        val view = inflater.inflate(R.layout.fragment_stats, container, false)
+        val chart = view.findViewById<LineChart>(R.id.chart);
+        val entries = ArrayList<Entry>()
+        entries.add(Entry(1f, 2f))
+        entries.add(Entry(2f, 4f))
+        entries.add(Entry(3f, 6f))
+
+        // Kreiraj DataSet i dodaj ga u podatke grafikona
+        val dataSet = LineDataSet(entries, "Label")
+        dataSet.color = Color.BLUE
+        dataSet.valueTextColor = Color.BLACK // Boja vrednosti na grafu
+        dataSet.valueTextSize = 12f // Veličina teksta vrednosti
+
+        // Kreiraj LineData sa DataSet-om
+        val lineData = LineData(dataSet)
+        chart.data = lineData
+
+        // Postavi izgled grafikona
+        chart.description.isEnabled = false // Isključuje opis
+        chart.axisLeft.axisMinimum = 0f // Minimalna vrednost na Y-osi
+        chart.xAxis.axisMinimum = 0f // Minimalna vrednost na X-osi
+        chart.xAxis.granularity = 1f // Postavi granularity X-osi
+
+        // Osveži grafikon da prikaže nove podatke
+        chart.invalidate()
+        chart.animateX(1000)
+        return view
     }
 
     companion object {
