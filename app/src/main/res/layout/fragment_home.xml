@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".Home">
 
     <LinearLayout
@@ -13,108 +14,165 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginStart="30sp"
             android:layout_marginTop="60sp"
             android:layout_marginEnd="30sp"
-            android:layout_marginStart="30sp"
-
             android:orientation="horizontal">
 
             <TextView
                 android:id="@+id/name"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:gravity="center"
                 android:layout_gravity="center_vertical"
-                android:text="Ime" />
-
-            <ImageView
-                android:id="@+id/image"
-                android:layout_width="100dp"
-                android:layout_height="100dp"
                 android:layout_weight="1"
-                android:src="@drawable/logo" />
+                android:fontFamily="@font/montserrat_bold"
+                android:text="Ime"
+                android:textSize="32sp" />
 
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/image"
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                android:layout_gravity="center_vertical"
+                android:padding="2dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/mresidovic"
+                app:shapeAppearanceOverlay="@style/circleImageView"
+                app:strokeColor="@color/black"
+                app:strokeWidth="2dp" />
         </LinearLayout>
+
 
         <TextView
             android:id="@+id/textView4"
-            android:layout_marginTop="40sp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:layout_marginStart="30sp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="30sp"
-            android:text="Dnevni plan" />
-
-        <Button
-            android:id="@+id/pice"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
             android:layout_marginTop="20sp"
-            android:text="Piće" />
+            android:layout_marginEnd="30sp"
+            android:fontFamily="@font/montserrat_italic"
+            android:text="Dnevni plan"
+            android:textSize="24sp" />
 
-        <androidx.cardview.widget.CardView
+
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_marginRight="8sp"
-            android:layout_height="wrap_content">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginStart="30sp"
-                android:layout_marginEnd="30sp"
-                android:orientation="horizontal">
-
-                <Button
-                    android:id="@+id/dorucak"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginRight="5sp"
-                    android:layout_weight="1"
-                    android:text="Doručak" />
-
-                <Button
-                    android:id="@+id/rucak"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="Ručak" />
-
-                <Button
-                    android:id="@+id/vecera"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="5sp"
-                    android:layout_weight="1"
-                    android:text="Večera" />
-
-            </LinearLayout>
-
-        </androidx.cardview.widget.CardView>
-
-        <Button
-            android:id="@+id/uzina"
-            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:text="Užina" />
+            android:layout_marginStart="30sp"
+            android:layout_marginTop="20sp"
+            android:layout_marginEnd="30sp"
+            android:orientation="vertical">
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/dorucak"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="100sp"
+                android:layout_marginRight="10sp"
+                android:layout_weight="1"
+                android:background="@drawable/custom_button_rucak"
+                android:fontFamily="@font/montserrat_italic"
+                android:gravity="right"
+                android:paddingTop="12sp"
+                android:paddingRight="20sp"
+                android:text="Doručak"
+                android:textColor="@color/grey"
+                android:textSize="18sp" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/rucak"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5sp"
+                android:layout_marginRight="100sp"
+                android:layout_weight="1"
+                android:background="@drawable/custom_background_rucak2"
+                android:fontFamily="@font/montserrat_italic"
+                android:gravity="left"
+                android:paddingLeft="20sp"
+                android:paddingTop="12sp"
+                android:text="Ručak"
+                android:textColor="@color/black"
+                android:textSize="18sp" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/vecera"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="100sp"
+                android:layout_marginTop="5sp"
+                android:layout_marginRight="10sp"
+                android:layout_weight="1"
+                android:background="@drawable/custom_button_rucak"
+                android:fontFamily="@font/montserrat_italic"
+                android:gravity="right"
+                android:paddingTop="12sp"
+                android:paddingRight="20sp"
+                android:text="Večera"
+                android:textColor="@color/grey"
+                android:textSize="18sp" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/pice"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="3sp"
+                android:layout_marginRight="100sp"
+                android:layout_weight="1"
+                android:background="@drawable/custom_background_rucak2"
+                android:fontFamily="@font/montserrat_italic"
+                android:gravity="left"
+                android:paddingLeft="20sp"
+                android:paddingTop="12sp"
+                android:text="Piće"
+                android:textColor="@color/black"
+                android:textSize="18sp" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/ostalo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="100sp"
+                android:layout_marginTop="5sp"
+                android:layout_marginRight="10sp"
+                android:layout_weight="1"
+                android:background="@drawable/custom_button_rucak"
+                android:fontFamily="@font/montserrat_italic"
+                android:gravity="right"
+                android:paddingTop="12sp"
+                android:paddingRight="20sp"
+                android:text="Ostalo"
+                android:textColor="@color/grey"
+                android:textSize="18sp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="30sp"
+            android:layout_marginTop="10sp"
+            android:layout_marginEnd="30sp"
+            android:layout_marginBottom="10sp"
+            android:orientation="horizontal" />
 
         <TextView
             android:id="@+id/textView3"
-            android:layout_marginTop="40sp"
-            android:layout_marginStart="30sp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Namirnice" />
+            android:layout_marginStart="30sp"
+            android:layout_marginTop="20sp"
+            android:fontFamily="@font/montserrat_italic"
+            android:text="Namirnice"
+            android:textSize="24sp" />
 
         <ListView
             android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:layout_marginStart="30sp"
-            android:layout_marginBottom="30sp"
-            android:layout_marginEnd="30sp"
             android:layout_marginTop="20sp"
-            android:layout_height="wrap_content" />
+            android:layout_marginEnd="30sp"
+            android:layout_marginBottom="30sp" />
 
     </LinearLayout>
 </FrameLayout>
