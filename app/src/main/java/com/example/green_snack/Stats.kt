@@ -6,7 +6,12 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.github.mikephil.charting.charts.BarChart
 import com.github.mikephil.charting.charts.LineChart
+import com.github.mikephil.charting.components.XAxis
+import com.github.mikephil.charting.data.BarData
+import com.github.mikephil.charting.data.BarDataSet
+import com.github.mikephil.charting.data.BarEntry
 import com.github.mikephil.charting.data.Entry
 import com.github.mikephil.charting.data.LineData
 import com.github.mikephil.charting.data.LineDataSet
@@ -40,27 +45,38 @@ class Stats : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         val view = inflater.inflate(R.layout.fragment_stats, container, false)
-        val chart = view.findViewById<LineChart>(R.id.chart);
-        val entries = ArrayList<Entry>()
-        entries.add(Entry(1f, 2f))
-        entries.add(Entry(2f, 4f))
-        entries.add(Entry(3f, 6f))
+        val chart = view.findViewById<BarChart>(R.id.chart);
+
+        chart.setDrawGridBackground(false);
+        chart.axisLeft.setDrawGridLines(false);
+        chart.axisRight.setDrawGridLines(false);
+        chart.xAxis.setDrawGridLines(false);
+        chart.setDrawBorders(false);
+
+
+        val entries = ArrayList<BarEntry>()
+        entries.add(BarEntry(1f, 2f))
+        entries.add(BarEntry(2f, 4f))
+        entries.add(BarEntry(30f, 6f))
 
         // Kreiraj DataSet i dodaj ga u podatke grafikona
-        val dataSet = LineDataSet(entries, "Label")
-        dataSet.color = Color.BLUE
-        dataSet.valueTextColor = Color.BLACK // Boja vrednosti na grafu
-        dataSet.valueTextSize = 12f // Veličina teksta vrednosti
+        val dataSet = BarDataSet(entries, "Label")
+        dataSet.color = resources.getColor(R.color.primary)
+        dataSet.valueTextColor = Color.BLACK
+        dataSet.valueTextSize = 9f
 
         // Kreiraj LineData sa DataSet-om
-        val lineData = LineData(dataSet)
+        val lineData = BarData(dataSet)
         chart.data = lineData
 
         // Postavi izgled grafikona
         chart.description.isEnabled = false // Isključuje opis
         chart.axisLeft.axisMinimum = 0f // Minimalna vrednost na Y-osi
         chart.xAxis.axisMinimum = 0f // Minimalna vrednost na X-osi
-        chart.xAxis.granularity = 1f // Postavi granularity X-osi
+        //chart.xAxis.granularity = 1f // Postavi granularity X-osi
+
+        chart.axisRight.isEnabled = false
+        chart.xAxis.position = XAxis.XAxisPosition.BOTTOM
 
         // Osveži grafikon da prikaže nove podatke
         chart.invalidate()
