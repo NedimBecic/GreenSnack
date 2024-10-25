@@ -44,6 +44,7 @@ dependencies {
     implementation(libs.androidx.appcompat)
     implementation(libs.material)
     implementation(libs.androidx.activity)
+    implementation("com.squareup.okhttp3:okhttp:4.12.0")
     implementation(libs.androidx.constraintlayout)
     implementation("com.google.android.material:material:1.9.0")
     testImplementation(libs.junit)
