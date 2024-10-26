@@ -25,7 +25,7 @@ class Home : Fragment() {
     private val client = OkHttpClient()
     private lateinit var user: User
     private var brojStavki : Int = 0
-    private val shoppingItems: MutableList<ShoppingItem> = mutableListOf()
+    private var shoppingItems: MutableList<ShoppingItem> = mutableListOf()
 
     @SuppressLint("MissingInflatedId")
     override fun onCreateView(
@@ -39,7 +39,7 @@ class Home : Fragment() {
         val veceraView = view.findViewById<View>(R.id.vecera)
         val imeTitle = view.findViewById<TextView>(R.id.imeTitle)
 
-        val firstName = arguments?.getString("firstName") ?: "User"
+        val firstName = arguments?.getString("firstName") ?: "Nedim"
 
         imeTitle.text = firstName
 

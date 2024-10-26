@@ -57,10 +57,30 @@ class MainActivity : AppCompatActivity() {
 
        binding.bottomNavigationView.setOnItemSelectedListener {
            when(it.itemId){
-               R.id.home -> replaceFragment(Home())
-               R.id.plan -> replaceFragment(WeekPlan())
-               R.id.stats -> replaceFragment(Stats())
-              R.id.profile -> replaceFragment(Profile())
+               R.id.home -> {
+                   val homeFragment2 = Home().apply {
+                       arguments = bundle
+                   }
+                   replaceFragment(homeFragment2)
+               }
+               R.id.plan -> {
+                   val weekFragment = WeekPlan().apply {
+                       arguments = bundle
+                   }
+                   replaceFragment(weekFragment)
+               }
+               R.id.stats -> {
+                   val statsFragment = Stats().apply {
+                       arguments = bundle
+                   }
+                   replaceFragment(statsFragment)
+               }
+              R.id.profile -> {
+                  val profileFragment = Profile().apply {
+                      arguments = bundle
+                  }
+                  replaceFragment(profileFragment)
+              }
               else ->{
                }
           }

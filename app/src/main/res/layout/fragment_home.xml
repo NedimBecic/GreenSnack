@@ -51,10 +51,10 @@
                     android:id="@+id/imeTitle"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Ime"
+                    android:fontFamily="@font/montserrat_bold"
+                    android:text="Nedim"
                     android:textColor="@color/black"
-                    android:textSize="28sp"
-                    android:fontFamily="@font/montserrat_bold" />
+                    android:textSize="28sp" />
             </LinearLayout>
 
             <ImageView
