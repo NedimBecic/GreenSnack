@@ -75,29 +75,11 @@ class Home : Fragment() {
             budzet = budzet
         )
 
-        val upit : String = planIshraneProfil(user,null)
-
         dorucakView.setOnClickListener {
-            getResponse(upit) { response ->
+            getResponse(planIshraneProfil(user,"Doručak",null)) { response ->
                 requireActivity().runOnUiThread {
                     try {
-                        val regex = """"doručak"\s*:\s*\{\s*"naziv"\s*:\s*"([^"]+)"""".toRegex()
-                        val matchResult = regex.find(response)
-
-                        val nazivDorucka = matchResult?.groups?.get(1)?.value ?: "Doručak"
-
-                        getResponse(recept(nazivDorucka)) { response2 ->
-                            requireActivity().runOnUiThread {
-                                try {
-                                    showMealBottomSheet(nazivDorucka, response2 ?: "No recipe available.")
-                                } catch (e: Exception) {
-                                    e.printStackTrace()
-                                    showMealBottomSheet("Doručak", "No recipe available.")
-                                }
-                            }
-                        }
-
-                        //showMealBottomSheet(nazivDorucka, mealsData[nazivDorucka] ?: "No recipe available.")
+                        showMealBottomSheet("Doručak", response ?: "No recipe available.")
                     } catch (e: Exception) {
                         e.printStackTrace()
                         showMealBottomSheet("Doručak", "No recipe available.")
@@ -108,15 +90,10 @@ class Home : Fragment() {
 
 
         rucakView.setOnClickListener {
-            getResponse(upit) { response ->
+            getResponse(planIshraneProfil(user,"Ručak",null)) { response ->
                 requireActivity().runOnUiThread {
                     try {
-                        val regex = """"ručak"\s*:\s*\{\s*"naziv"\s*:\s*"([^"]+)"""".toRegex()
-                        val matchResult = regex.find(response)
-
-                        val nazivRucka = matchResult?.groups?.get(1)?.value ?: "Ručak"
-
-                        showMealBottomSheet(nazivRucka, mealsData[nazivRucka] ?: "No recipe available.")
+                        showMealBottomSheet("Ručak", response ?: "No recipe available.")
                     } catch (e: Exception) {
                         e.printStackTrace()
                         showMealBottomSheet("Ručak", "No recipe available.")
@@ -126,15 +103,10 @@ class Home : Fragment() {
         }
 
         veceraView.setOnClickListener {
-            getResponse(upit) { response ->
+            getResponse(planIshraneProfil(user,"Večera",null)) { response ->
                 requireActivity().runOnUiThread {
                     try {
-                        val regex = """"večera"\s*:\s*\{\s*"naziv"\s*:\s*"([^"]+)"""".toRegex()
-                        val matchResult = regex.find(response)
-
-                        val nazivVecere = matchResult?.groups?.get(1)?.value ?: "Večera"
-
-                        showMealBottomSheet(nazivVecere, mealsData[nazivVecere] ?: "No recipe available.")
+                        showMealBottomSheet("Večera", response ?: "No recipe available.")
                     } catch (e: Exception) {
                         e.printStackTrace()
                         showMealBottomSheet("Večera", "No recipe available.")
@@ -199,9 +171,9 @@ class Home : Fragment() {
         })
     }
 
-    fun planIshraneProfil(userProfile: User, ciljGubitkaTezine: String?): String {
+    fun planIshraneProfil(userProfile: User, obrok: String, ciljGubitkaTezine: String?): String {
         return """
-        Na osnovu sljedećeg profila korisnika, kreiraj detaljan dnevni plan obroka s ciljem smanjenja emisije CO2 i minimiziranja otpada od hrane. Plan treba biti strukturiran tako da omogućava jednostavno izdvajanje dnevnog plana obroka.
+        Na osnovu sljedećeg profila korisnika, kreiraj plan obroka za ${obrok} s ciljem smanjenja emisije CO2 i minimiziranja otpada od hrane.
 
         **Profil korisnika:**
         - Spol: ${userProfile.spol}
@@ -222,12 +194,16 @@ class Home : Fragment() {
         - Koristiti što je moguće više lokalne namirnice dostupne u Bosni i Hercegovini.
         - Uključiti preferirane kategorije jela koliko god je moguće, uz balansiranje nutritivnih potreba.
         **Struktura odgovora**
-        - Odgovor struktuiraj tako da ima sljedeći format
-			"plan_obroka": {
-                    "doručak":{"naziv": "jelo1", "kolicina": "količina1"},
-                    "ručak":{"naziv": "jelo2", "kolicina": "količina2"},
-                    "večera": {"naziv": "jelo3", "kolicina": "količina3"}
-                }
+        - Primjer izgleda odgovora:
+			${obrok}: naziv jela
+            Sastojci:
+                - sastojak 1
+                - sastojak 2
+                - ...
+            Ovim obrokom
+                - smanjujete CO2 emisije za x%
+                - štedite x% KM u odnosu na prosječan obrok
+            
     """.trimIndent()
     }
 
