@@ -48,7 +48,7 @@
                     android:fontFamily="@font/montserrat_bold" />
 
                 <TextView
-                    android:id="@+id/summary_title_extend"
+                    android:id="@+id/imeTitle"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Ime"
