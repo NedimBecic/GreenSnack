@@ -24,7 +24,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
         android:text="@string/personalni_detalji"
-        android:textSize="24sp"
+        android:textSize="28sp"
         android:textColor="#333333"
         android:fontFamily="@font/montserrat_bold"
         android:layout_gravity="center"
@@ -44,7 +44,7 @@
             android:gravity="center"
             android:text="1"
             android:textColor="@color/white"
-            android:textSize="18sp"
+            android:textSize="22sp"
             android:fontFamily="@font/montserrat_regular"
             android:layout_marginEnd="16dp" />
 
@@ -55,7 +55,7 @@
             android:gravity="center"
             android:text="2"
             android:textColor="@color/primary"
-            android:textSize="18sp"
+            android:textSize="22sp"
             android:fontFamily="@font/montserrat_regular"
             android:layout_marginEnd="16dp" />
 
@@ -66,7 +66,7 @@
             android:gravity="center"
             android:text="3"
             android:textColor="@color/primary"
-            android:textSize="18sp"
+            android:textSize="22sp"
             android:fontFamily="@font/montserrat_regular" />
     </LinearLayout>
 
@@ -153,7 +153,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="100sp"
+        android:layout_marginBottom="70sp"
         android:orientation="horizontal"
         >
 
@@ -161,23 +161,24 @@
             android:id="@+id/visina"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="12dp"
-            android:layout_weight="1"
-            android:hint="@string/visina"
-            android:background="@drawable/edittext_bkg"
             android:layout_marginStart="20sp"
+            android:layout_marginTop="28dp"
             android:layout_marginEnd="20sp"
+            android:layout_weight="1"
+            android:background="@drawable/edittext_bkg"
+            android:fontFamily="@font/montserrat_regular"
+            android:hint="@string/visina"
+            android:inputType="numberDecimal"
             android:padding="12dp"
             android:textColor="#000000"
-            android:textColorHint="#AAAAAA"
-            android:fontFamily="@font/montserrat_regular"
-            android:inputType="numberDecimal" />
+            android:textColorHint="#AAAAAA" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="20sp"
             android:layout_marginEnd="20sp"
+            android:layout_marginTop="24dp"
             android:text="@string/m"
             android:textColor="#888888"
             android:layout_gravity="center_vertical"
@@ -206,6 +207,7 @@
             android:layout_marginEnd="8dp"
             android:background="@drawable/outlined_buttonbkg"
             android:textColor="@color/primary"
+            android:textSize="20sp"
             android:fontFamily="@font/montserrat_regular"
             android:padding="12dp" />
 
@@ -223,6 +225,7 @@
             android:drawablePadding="8dp"
             android:background="@drawable/buttonbkg"
             android:textColor="@color/white"
+            android:textSize="20sp"
             android:fontFamily="@font/montserrat_regular"
             android:padding="12dp" />
     </LinearLayout>

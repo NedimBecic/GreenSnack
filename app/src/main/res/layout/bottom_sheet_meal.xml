@@ -22,7 +22,7 @@
         android:layout_height="wrap_content"
         android:text="Jelo"
         android:textColor="@color/black"
-        android:textSize="24sp"
+        android:textSize="28sp"
         android:textStyle="bold"
         android:fontFamily="@font/montserrat_bold"
         android:layout_marginBottom="16dp"/>
@@ -33,7 +33,7 @@
         android:layout_height="wrap_content"
         android:text="Sastojci:"
         android:textColor="@color/primary"
-        android:textSize="18sp"
+        android:textSize="22sp"
         android:textStyle="bold"
         android:fontFamily="@font/montserrat_bold"
         android:layout_marginBottom="8dp"/>
@@ -58,7 +58,7 @@
                 android:layout_height="wrap_content"
                 android:text="• Pasta\n• Tomatoes\n• Basil\n• Olive Oil"
                 android:textColor="@color/black"
-                android:textSize="16sp"
+                android:textSize="20sp"
                 android:fontFamily="@font/montserrat_regular"/>
 
         </LinearLayout>
@@ -70,7 +70,7 @@
         android:layout_height="wrap_content"
         android:text="Benefiti"
         android:textColor="@color/primary"
-        android:textSize="18sp"
+        android:textSize="22sp"
         android:textStyle="bold"
         android:fontFamily="@font/montserrat_bold"
         android:layout_marginBottom="8dp"/>
@@ -95,7 +95,7 @@
                 android:layout_height="wrap_content"
                 android:text="• High in Protein\n• Easy to Digest\n• Rich in Vitamins"
                 android:textColor="@color/black"
-                android:textSize="16sp"
+                android:textSize="20sp"
                 android:fontFamily="@font/montserrat_regular"/>
 
         </LinearLayout>
@@ -109,6 +109,7 @@
         android:textAllCaps="false"
         android:background="@drawable/buttonbkg"
         android:textColor="@color/white"
+        android:textSize="20sp"
         android:layout_marginTop="8dp"/>
 
 </LinearLayout>

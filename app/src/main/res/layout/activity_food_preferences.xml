@@ -27,7 +27,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="32dp"
             android:text="@string/personalni_detalji"
-            android:textSize="24sp"
+            android:textSize="28sp"
             android:textColor="#333333"
             android:fontFamily="@font/montserrat_bold"
             android:layout_gravity="center"
@@ -47,7 +47,7 @@
                 android:gravity="center"
                 android:text="1"
                 android:textColor="@color/white"
-                android:textSize="18sp"
+                android:textSize="22sp"
                 android:fontFamily="@font/montserrat_regular"
                 android:layout_marginEnd="16dp" />
 
@@ -58,7 +58,7 @@
                 android:gravity="center"
                 android:text="2"
                 android:textColor="@color/white"
-                android:textSize="18sp"
+                android:textSize="22sp"
                 android:fontFamily="@font/montserrat_regular"
                 android:layout_marginEnd="16dp" />
 
@@ -69,7 +69,7 @@
                 android:gravity="center"
                 android:text="3"
                 android:textColor="@color/white"
-                android:textSize="18sp"
+                android:textSize="22sp"
                 android:fontFamily="@font/montserrat_regular" />
         </LinearLayout>
 
@@ -92,7 +92,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/jela_u_danu"
-            android:textSize="18sp"
+            android:textSize="22sp"
             android:textColor="#333333"
             android:fontFamily="@font/montserrat_bold"
             android:layout_marginBottom="24dp" />
@@ -124,7 +124,7 @@
                 android:gravity="center"
                 android:text="1"
                 android:textColor="#000000"
-                android:textSize="18sp" />
+                android:textSize="22sp" />
 
             <ImageButton
                 android:id="@+id/incrementButton"
@@ -141,7 +141,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="24dp"
             android:text="Obavezno uključi"
-            android:textSize="18sp"
+            android:textSize="22sp"
             android:textColor="#333333"
             android:fontFamily="@font/montserrat_bold"
             android:layout_marginBottom="24dp" />
@@ -251,7 +251,7 @@
                     android:paddingEnd="16dp"
                     android:text="Užina"
                     android:textColor="#333333"
-                    android:textSize="16sp"
+                    android:textSize="20sp"
                     app:switchMinWidth="56dp"
                     app:thumbTint="@drawable/thumb_color"
                     app:trackTint="@drawable/track_color" />
@@ -263,7 +263,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="24dp"
             android:text="Odaberi kategorije"
-            android:textSize="18sp"
+            android:textSize="22sp"
             android:textColor="#333333"
             android:fontFamily="@font/montserrat_bold"
             android:layout_marginBottom="24dp" />
@@ -283,7 +283,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:layout_marginBottom="40dp"
+            android:layout_marginBottom="55dp"
             android:gravity="center">
 
             <androidx.appcompat.widget.AppCompatButton
@@ -296,6 +296,7 @@
                 android:drawableLeft="@drawable/arrow_back"
                 android:drawablePadding="8dp"
                 android:layout_marginEnd="8dp"
+                android:textSize="20sp"
                 android:background="@drawable/outlined_buttonbkg"
                 android:textColor="@color/primary"
                 android:fontFamily="@font/montserrat_regular"
@@ -312,6 +313,7 @@
                 android:drawablePadding="8dp"
                 android:background="@drawable/buttonbkg"
                 android:textColor="#FFFFFF"
+                android:textSize="20sp"
                 android:fontFamily="@font/montserrat_regular"
                 android:padding="12dp" />
         </LinearLayout>

@@ -26,7 +26,7 @@
                 android:layout_height="wrap_content"
                 android:text="Ponedjeljak"
                 android:textColor="@color/black"
-                android:textSize="20sp"
+                android:textSize="24sp"
                 android:textStyle="bold"
                 android:layout_marginBottom="12dp"
                 android:fontFamily="@font/montserrat_bold" />
@@ -45,8 +45,8 @@
                     android:layout_marginBottom="12dp">
 
                     <ImageView
-                        android:layout_width="40dp"
-                        android:layout_height="40dp"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
                         android:src="@drawable/breakfast"
                         android:layout_marginEnd="12dp" />
 
@@ -70,7 +70,7 @@
                             android:layout_height="wrap_content"
                             android:text="8:00 AM - 5€ uštede"
                             android:textColor="#666666"
-                            android:textSize="14sp"
+                            android:textSize="18sp"
                             android:fontFamily="@font/montserrat_regular" />
                     </LinearLayout>
                 </LinearLayout>
@@ -84,10 +84,10 @@
                     android:layout_marginBottom="12dp">
 
                     <ImageView
-                        android:layout_width="40dp"
-                        android:layout_height="40dp"
-                        android:src="@drawable/lunch"
-                        android:layout_marginEnd="12dp" />
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:layout_marginEnd="12dp"
+                        android:src="@drawable/lunch" />
 
                     <LinearLayout
                         android:layout_width="0dp"
@@ -99,18 +99,18 @@
                             android:id="@+id/rucak"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:fontFamily="@font/montserrat_bold"
                             android:text="Ručak"
                             android:textColor="@color/black"
-                            android:textSize="16sp"
-                            android:fontFamily="@font/montserrat_bold" />
+                            android:textSize="20sp" />
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:fontFamily="@font/montserrat_regular"
                             android:text="12:30 PM - 10€ uštede"
                             android:textColor="#666666"
-                            android:textSize="14sp"
-                            android:fontFamily="@font/montserrat_regular" />
+                            android:textSize="20sp" />
                     </LinearLayout>
                 </LinearLayout>
 
@@ -123,10 +123,10 @@
                     android:layout_marginBottom="12dp">
 
                     <ImageView
-                        android:layout_width="40dp"
-                        android:layout_height="40dp"
-                        android:src="@drawable/dinnermain"
-                        android:layout_marginEnd="12dp" />
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:layout_marginEnd="12dp"
+                        android:src="@drawable/dinnermain" />
 
                     <LinearLayout
                         android:layout_width="0dp"
@@ -138,18 +138,18 @@
                             android:id="@+id/vecera"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:fontFamily="@font/montserrat_bold"
                             android:text="Večera"
                             android:textColor="@color/black"
-                            android:textSize="16sp"
-                            android:fontFamily="@font/montserrat_bold" />
+                            android:textSize="20sp" />
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:fontFamily="@font/montserrat_regular"
                             android:text="7:00 PM - 8€ uštede"
                             android:textColor="#666666"
-                            android:textSize="14sp"
-                            android:fontFamily="@font/montserrat_regular" />
+                            android:textSize="18sp" />
                     </LinearLayout>
                 </LinearLayout>
             </LinearLayout>

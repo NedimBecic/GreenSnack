@@ -24,7 +24,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
         android:text="@string/personalni_detalji"
-        android:textSize="24sp"
+        android:textSize="28sp"
         android:textColor="#333333"
         android:fontFamily="@font/montserrat_bold"
         android:layout_gravity="center"
@@ -44,7 +44,7 @@
             android:gravity="center"
             android:text="1"
             android:textColor="@color/white"
-            android:textSize="18sp"
+            android:textSize="22sp"
             android:fontFamily="@font/montserrat_regular"
             android:layout_marginEnd="16dp" />
 
@@ -55,7 +55,7 @@
             android:gravity="center"
             android:text="2"
             android:textColor="@color/white"
-            android:textSize="18sp"
+            android:textSize="22sp"
             android:fontFamily="@font/montserrat_regular"
             android:layout_marginEnd="16dp" />
 
@@ -66,15 +66,15 @@
             android:gravity="center"
             android:text="3"
             android:textColor="@color/primary"
-            android:textSize="18sp"
+            android:textSize="22sp"
             android:fontFamily="@font/montserrat_regular" />
     </LinearLayout>
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Bolesti*"
-        android:textSize="18sp"
+        android:text="Bolesti (opcionalno)"
+        android:textSize="22sp"
         android:layout_marginStart="20sp"
         android:textColor="#333333"
         android:fontFamily="@font/montserrat_bold"
@@ -100,8 +100,8 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Alergije*"
-        android:textSize="18sp"
+        android:text="Alergije (opcionalno)"
+        android:textSize="22sp"
         android:layout_marginStart="20sp"
         android:textColor="#333333"
         android:fontFamily="@font/montserrat_bold"
@@ -121,7 +121,7 @@
         android:textColorHint="#AAAAAA"
         android:fontFamily="@font/montserrat_regular"
         android:inputType="textMultiLine"
-        android:layout_marginBottom="100dp"
+        android:layout_marginBottom="70dp"
         android:scrollbars="vertical" />
 
     <LinearLayout
@@ -146,6 +146,7 @@
             android:background="@drawable/outlined_buttonbkg"
             android:textColor="@color/primary"
             android:fontFamily="@font/montserrat_regular"
+            android:textSize="20sp"
             android:padding="12dp" />
 
         <androidx.appcompat.widget.AppCompatButton
@@ -159,6 +160,7 @@
             android:drawablePadding="8dp"
             android:background="@drawable/buttonbkg"
             android:textColor="#FFFFFF"
+            android:textSize="20sp"
             android:fontFamily="@font/montserrat_regular"
             android:padding="12dp" />
     </LinearLayout>

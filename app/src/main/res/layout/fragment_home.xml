@@ -26,6 +26,7 @@
                 android:layout_height="wrap_content"
                 android:layout_alignParentStart="true"
                 android:layout_marginEnd="64dp"
+                android:layout_marginTop="5dp"
                 android:orientation="vertical">
 
                 <TextView
@@ -33,19 +34,19 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="8dp"
+                    android:fontFamily="@font/montserrat_bold"
                     android:text="Subota, 26 Oktobar"
                     android:textColor="@color/black"
-                    android:textSize="16sp"
-                    android:fontFamily="@font/montserrat_bold" />
+                    android:textSize="20sp" />
 
                 <TextView
                     android:id="@+id/summary_title"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:fontFamily="@font/montserrat_bold"
                     android:text="Dobro došli,"
                     android:textColor="@color/black"
-                    android:textSize="28sp"
-                    android:fontFamily="@font/montserrat_bold" />
+                    android:textSize="32sp" />
 
                 <TextView
                     android:id="@+id/imeTitle"
@@ -54,17 +55,17 @@
                     android:fontFamily="@font/montserrat_bold"
                     android:text="Nedim"
                     android:textColor="@color/black"
-                    android:textSize="28sp" />
+                    android:textSize="32sp" />
             </LinearLayout>
 
             <ImageView
                 android:id="@+id/logo_image"
-                android:layout_width="116dp"
-                android:layout_height="104dp"
+                android:layout_width="139dp"
+                android:layout_height="128dp"
                 android:layout_alignParentTop="true"
                 android:layout_alignParentEnd="true"
-                android:layout_marginTop="-14dp"
-                android:layout_marginEnd="-1dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="5dp"
                 android:background="@android:color/transparent"
                 android:src="@drawable/logosmall" />
         </RelativeLayout>
@@ -87,12 +88,12 @@
                     android:id="@+id/meal_plan_title"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginBottom="12dp"
+                    android:fontFamily="@font/montserrat_bold"
                     android:text="Današnji dnevni plan"
                     android:textColor="@color/black"
-                    android:textSize="18sp"
-                    android:textStyle="bold"
-                    android:layout_marginBottom="12dp"
-                    android:fontFamily="@font/montserrat_bold" />
+                    android:textSize="22sp"
+                    android:textStyle="bold" />
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -108,10 +109,10 @@
                         android:layout_marginBottom="12dp">
 
                         <ImageView
-                            android:layout_width="40dp"
-                            android:layout_height="40dp"
-                            android:src="@drawable/breakfast"
-                            android:layout_marginEnd="12dp" />
+                            android:layout_width="55dp"
+                            android:layout_height="55dp"
+                            android:layout_marginEnd="12dp"
+                            android:src="@drawable/breakfast" />
 
                         <LinearLayout
                             android:layout_width="0dp"
@@ -123,17 +124,17 @@
                                 android:id="@+id/dorucak"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
+                                android:fontFamily="@font/montserrat_bold"
                                 android:text="Doručak"
                                 android:textColor="@color/black"
-                                android:textSize="16sp"
-                                android:fontFamily="@font/montserrat_bold" />
+                                android:textSize="20sp" />
 
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="8:00 AM - 5€ uštede"
                                 android:textColor="#666666"
-                                android:textSize="14sp"
+                                android:textSize="18sp"
                                 android:fontFamily="@font/montserrat_regular" />
                         </LinearLayout>
                     </LinearLayout>
@@ -147,10 +148,10 @@
                         android:layout_marginBottom="12dp">
 
                         <ImageView
-                            android:layout_width="40dp"
-                            android:layout_height="40dp"
-                            android:src="@drawable/lunch"
-                            android:layout_marginEnd="12dp" />
+                            android:layout_width="50dp"
+                            android:layout_height="50dp"
+                            android:layout_marginEnd="12dp"
+                            android:src="@drawable/lunch" />
 
                         <LinearLayout
                             android:layout_width="0dp"
@@ -162,18 +163,18 @@
                                 android:id="@+id/rucak"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
+                                android:fontFamily="@font/montserrat_bold"
                                 android:text="Ručak"
                                 android:textColor="@color/black"
-                                android:textSize="16sp"
-                                android:fontFamily="@font/montserrat_bold" />
+                                android:textSize="20sp" />
 
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
+                                android:fontFamily="@font/montserrat_regular"
                                 android:text="12:30 PM - 10€ uštede"
                                 android:textColor="#666666"
-                                android:textSize="14sp"
-                                android:fontFamily="@font/montserrat_regular" />
+                                android:textSize="18sp" />
                         </LinearLayout>
                     </LinearLayout>
 
@@ -186,10 +187,10 @@
                         android:layout_marginBottom="12dp">
 
                         <ImageView
-                            android:layout_width="40dp"
-                            android:layout_height="40dp"
-                            android:src="@drawable/dinnermain"
-                            android:layout_marginEnd="12dp" />
+                            android:layout_width="50dp"
+                            android:layout_height="50dp"
+                            android:layout_marginEnd="12dp"
+                            android:src="@drawable/dinnermain" />
 
                         <LinearLayout
                             android:layout_width="0dp"
@@ -201,18 +202,18 @@
                                 android:id="@+id/vecera"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
+                                android:fontFamily="@font/montserrat_bold"
                                 android:text="Večera"
                                 android:textColor="@color/black"
-                                android:textSize="16sp"
-                                android:fontFamily="@font/montserrat_bold" />
+                                android:textSize="20sp" />
 
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
+                                android:fontFamily="@font/montserrat_regular"
                                 android:text="7:00 PM - 8€ uštede"
                                 android:textColor="#666666"
-                                android:textSize="14sp"
-                                android:fontFamily="@font/montserrat_regular" />
+                                android:textSize="18sp" />
                         </LinearLayout>
                     </LinearLayout>
                 </LinearLayout>
@@ -237,12 +238,12 @@
                     android:id="@+id/grocery_list_title"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginBottom="12dp"
+                    android:fontFamily="@font/montserrat_bold"
                     android:text="Pregled spiska namirnica"
                     android:textColor="@color/black"
-                    android:textSize="18sp"
-                    android:textStyle="bold"
-                    android:layout_marginBottom="12dp"
-                    android:fontFamily="@font/montserrat_bold" />
+                    android:textSize="22sp"
+                    android:textStyle="bold" />
 
                 <ProgressBar
                     android:id="@+id/grocery_list_progress"
@@ -268,16 +269,16 @@
                         android:fontFamily="@font/montserrat_regular"
                         android:text="Stavke: 6"
                         android:textColor="@color/black"
-                        android:textSize="16sp" />
+                        android:textSize="20sp" />
 
                     <TextView
                         android:id="@+id/total_cost"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:fontFamily="@font/montserrat_regular"
                         android:text="Total: 12.50€"
                         android:textColor="@color/black"
-                        android:textSize="16sp"
-                        android:fontFamily="@font/montserrat_regular" />
+                        android:textSize="20sp" />
                 </LinearLayout>
 
                 <Button
@@ -290,6 +291,7 @@
                     android:backgroundTint="@color/primary"
                     android:textAllCaps="false"
                     android:layout_marginTop="16dp"
+                    android:textSize="20sp"
                     android:fontFamily="@font/montserrat_bold" />
             </LinearLayout>
         </androidx.cardview.widget.CardView>
@@ -313,149 +315,150 @@
                 android:fontFamily="@font/montserrat_bold" />
 
             <LinearLayout
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
+                android:layout_marginBottom="16dp"
                 android:gravity="center"
-                android:weightSum="3"
-                android:layout_marginBottom="16dp">
+                android:orientation="horizontal"
+                android:weightSum="3">
+
                 <androidx.cardview.widget.CardView
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
                     android:layout_marginEnd="16dp"
                     android:layout_marginBottom="16dp"
-                    app:cardElevation="4dp"
+                    android:layout_weight="1"
+                    app:cardBackgroundColor="@color/white"
                     app:cardCornerRadius="12dp"
-                    app:cardBackgroundColor="@color/white">
+                    app:cardElevation="4dp">
 
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:orientation="vertical"
                         android:gravity="center"
+                        android:orientation="vertical"
                         android:padding="16dp">
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:fontFamily="@font/montserrat_bold"
+                            android:gravity="center"
                             android:text="Otpad hrane"
                             android:textColor="@color/black"
-                            android:textSize="16sp"
-                            android:gravity="center"
-                            android:fontFamily="@font/montserrat_bold" />
+                            android:textSize="20sp" />
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:layout_marginBottom="8dp"
+                            android:fontFamily="@font/montserrat_regular"
+                            android:gravity="center"
                             android:text="65 kg"
                             android:textColor="@color/white"
-                            android:textSize="8sp"
-                            android:gravity="center"
-                            android:layout_marginBottom="8dp"
-                            android:fontFamily="@font/montserrat_regular" />
+                            android:textSize="12sp" />
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:fontFamily="@font/montserrat_bold"
+                            android:gravity="center"
                             android:text="50%"
                             android:textColor="#00BFFF"
-                            android:textSize="20sp"
-                            android:gravity="center"
-                            android:fontFamily="@font/montserrat_bold" />
+                            android:textSize="20sp" />
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
 
                 <androidx.cardview.widget.CardView
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
                     android:layout_marginEnd="16dp"
                     android:layout_marginBottom="16dp"
-                    app:cardElevation="4dp"
+                    android:layout_weight="1"
+                    app:cardBackgroundColor="@color/white"
                     app:cardCornerRadius="12dp"
-                    app:cardBackgroundColor="@color/white">
+                    app:cardElevation="4dp">
 
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:orientation="vertical"
                         android:gravity="center"
+                        android:orientation="vertical"
                         android:padding="16dp">
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:fontFamily="@font/montserrat_bold"
+                            android:gravity="center"
                             android:text="CO2 Otisak"
                             android:textColor="@color/black"
-                            android:textSize="16sp"
-                            android:gravity="center"
-                            android:fontFamily="@font/montserrat_bold" />
+                            android:textSize="20sp" />
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:layout_marginBottom="8dp"
+                            android:fontFamily="@font/montserrat_regular"
+                            android:gravity="center"
                             android:text="50 C02/kg"
                             android:textColor="@color/white"
-                            android:textSize="8sp"
-                            android:gravity="center"
-                            android:layout_marginBottom="8dp"
-                            android:fontFamily="@font/montserrat_regular" />
+                            android:textSize="12sp" />
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:fontFamily="@font/montserrat_bold"
+                            android:gravity="center"
                             android:text="30%"
                             android:textColor="#FF6347"
-                            android:textSize="20sp"
-                            android:gravity="center"
-                            android:fontFamily="@font/montserrat_bold" />
+                            android:textSize="20sp" />
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
 
                 <androidx.cardview.widget.CardView
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
                     android:layout_marginBottom="16dp"
-                    app:cardElevation="4dp"
+                    android:layout_weight="1"
+                    app:cardBackgroundColor="@color/white"
                     app:cardCornerRadius="12dp"
-                    app:cardBackgroundColor="@color/white">
+                    app:cardElevation="4dp">
 
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:orientation="vertical"
                         android:gravity="center"
+                        android:orientation="vertical"
                         android:padding="16dp">
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Novčana ušteda"
-                            android:textColor="@color/black"
-                            android:textSize="16sp"
+                            android:fontFamily="@font/montserrat_bold"
                             android:gravity="center"
-                            android:fontFamily="@font/montserrat_bold" />
+                            android:text="Ušteda novca"
+                            android:textColor="@color/black"
+                            android:textSize="20sp" />
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:layout_marginBottom="8dp"
+                            android:fontFamily="@font/montserrat_regular"
+                            android:gravity="center"
                             android:text="50€"
                             android:textColor="@color/white"
-                            android:textSize="8sp"
-                            android:gravity="center"
-                            android:layout_marginBottom="8dp"
-                            android:fontFamily="@font/montserrat_regular" />
+                            android:textSize="12sp" />
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:fontFamily="@font/montserrat_bold"
+                            android:gravity="center"
                             android:text="30%"
                             android:textColor="#FFD700"
-                            android:textSize="20sp"
-                            android:gravity="center"
-                            android:fontFamily="@font/montserrat_bold" />
+                            android:textSize="20sp" />
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
 

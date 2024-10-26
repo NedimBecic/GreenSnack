@@ -24,7 +24,7 @@
             android:fontFamily="@font/montserrat_bold"
             android:gravity="center"
             android:text="Upravljaj profilom"
-            android:textSize="30sp"
+            android:textSize="34sp"
             android:layout_gravity="center_horizontal" />
 
         <ImageView
@@ -40,7 +40,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Personal"
-            android:textSize="18sp"
+            android:textSize="22sp"
             android:textColor="#333333"
             android:fontFamily="@font/montserrat_bold"
             android:layout_marginTop="16dp"
@@ -52,7 +52,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Ime i prezime"
-            android:textSize="16sp"
+            android:textSize="22sp"
             android:textColor="#666666"
             android:padding="12dp"
             android:background="@drawable/textview_bkg"
@@ -89,7 +89,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Additional Information"
-            android:textSize="18sp"
+            android:textSize="22sp"
             android:textColor="#333333"
             android:fontFamily="@font/montserrat_bold"
             android:layout_marginBottom="16dp" />
@@ -122,7 +122,7 @@
                 android:textColor="#888888"
                 android:layout_gravity="center_vertical"
                 android:fontFamily="@font/montserrat_regular"
-                android:textSize="16sp" />
+                android:textSize="22sp" />
         </LinearLayout>
 
         <!-- Height Input -->
@@ -153,7 +153,7 @@
                 android:textColor="#888888"
                 android:layout_gravity="center_vertical"
                 android:fontFamily="@font/montserrat_regular"
-                android:textSize="16sp" />
+                android:textSize="22sp" />
         </LinearLayout>
 
         <!-- Disease and Allergy Inputs -->
@@ -161,7 +161,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Bolesti"
-            android:textSize="18sp"
+            android:textSize="22sp"
             android:textColor="#333333"
             android:fontFamily="@font/montserrat_bold"
             android:layout_marginBottom="8dp" />
@@ -186,7 +186,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Alergije"
-            android:textSize="18sp"
+            android:textSize="22sp"
             android:textColor="#333333"
             android:fontFamily="@font/montserrat_bold"
             android:layout_marginBottom="8dp" />
@@ -212,7 +212,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/jela_u_danu"
-            android:textSize="18sp"
+            android:textSize="22sp"
             android:textColor="#333333"
             android:fontFamily="@font/montserrat_bold"
             android:layout_marginBottom="24dp" />
@@ -254,7 +254,7 @@
                     android:gravity="center"
                     android:text="1"
                     android:textColor="@color/black"
-                    android:textSize="18sp" />
+                    android:textSize="22sp" />
 
                 <ImageButton
                     android:id="@+id/incrementButton"
@@ -387,7 +387,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Odaberi kategorije"
-            android:textSize="18sp"
+            android:textSize="22sp"
             android:textColor="#333333"
             android:fontFamily="@font/montserrat_bold"
             android:layout_marginBottom="24dp" />

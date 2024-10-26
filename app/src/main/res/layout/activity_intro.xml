@@ -28,7 +28,7 @@
         android:fontFamily="@font/montserrat_regular"
         android:text="@string/intro_text"
         android:textColor="#AAAAAA"
-        android:textSize="16sp" />
+        android:textSize="20sp" />
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/zapocniButton"
@@ -44,7 +44,7 @@
         android:background="@drawable/buttonbkg"
         android:backgroundTint="@color/primary"
         android:text="@string/zapocni"
-        android:textSize="20sp"
+        android:textSize="24sp"
         android:textAllCaps="false"
         android:textColor="#FFFFFF"
         android:fontFamily="@font/montserrat_regular"/>

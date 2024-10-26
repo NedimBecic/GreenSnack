@@ -25,7 +25,7 @@
         android:layout_height="wrap_content"
         android:text="Item Name"
         android:textColor="@color/black"
-        android:textSize="16sp"
+        android:textSize="20sp"
         android:fontFamily="@font/montserrat_regular"
         app:layout_constraintStart_toEndOf="@id/item_checkbox"
         app:layout_constraintEnd_toEndOf="parent"
