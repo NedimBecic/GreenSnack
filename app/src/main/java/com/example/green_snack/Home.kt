@@ -8,8 +8,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
-import androidx.appcompat.app.AppCompatActivity
-import androidx.fragment.app.FragmentManager
 import okhttp3.Call
 import okhttp3.Callback
 import okhttp3.MediaType.Companion.toMediaTypeOrNull
@@ -19,18 +17,15 @@ import okhttp3.RequestBody.Companion.toRequestBody
 import okhttp3.Response
 import org.json.JSONArray
 import org.json.JSONObject
-import org.w3c.dom.Text
 import java.io.IOException
 
 class Home : Fragment() {
-    private val mealsData = mapOf(
-        "Doručak" to "Recipe for Doručak: Eggs, bread, and orange juice.",
-        "Ručak" to "Recipe for Ručak: Grilled chicken, rice, and salad.",
-        "Večera" to "Recipe for Večera: Pasta, garlic bread, and dessert."
-    )
+
 
     private val client = OkHttpClient()
     private lateinit var user: User
+    private var brojStavki : Int = 0
+    private val shoppingItems: MutableList<ShoppingItem> = mutableListOf()
 
     @SuppressLint("MissingInflatedId")
     override fun onCreateView(
@@ -75,44 +70,76 @@ class Home : Fragment() {
             budzet = budzet
         )
 
+
+        val showShoppingListButton = view.findViewById<TextView>(R.id.view_full_list_button)
+        showShoppingListButton.setOnClickListener {
+            showShoppingListBottomSheet()
+        }
+
         dorucakView.setOnClickListener {
-            getResponse(planIshraneProfil(user,"Doručak",null)) { response ->
+            getResponse(planIshraneProfil(user, "Doručak", null)) { response ->
                 requireActivity().runOnUiThread {
                     try {
                         val dorucakResponse = parsePlanObroka(response)
-                        showMealBottomSheet("Doručak", dorucakResponse.jelo ?: "No recipe available.")
+                        addIngredientsToShoppingList(dorucakResponse.sastojci)
+                        showMealBottomSheet(
+                            dorucakResponse.jelo ?: "No recipe available.",
+                            dorucakResponse.sastojci,
+                            dorucakResponse.poboljsanja
+                        )
                     } catch (e: Exception) {
                         e.printStackTrace()
-                        showMealBottomSheet("Doručak", "No recipe available.")
+                        showMealBottomSheet(
+                            "Doručak",
+                            listOf("No ingredients available."),
+                            listOf("No benefits available.")
+                        )
                     }
                 }
             }
         }
 
-
         rucakView.setOnClickListener {
-            getResponse(planIshraneProfil(user,"Ručak",null)) { response ->
+            getResponse(planIshraneProfil(user, "Ručak", null)) { response ->
                 requireActivity().runOnUiThread {
                     try {
                         val rucakResponse = parsePlanObroka(response)
-                        showMealBottomSheet("Ručak", rucakResponse.jelo ?: "No recipe available.")
+                        addIngredientsToShoppingList(rucakResponse.sastojci)
+                        showMealBottomSheet(
+                            rucakResponse.jelo ?: "No recipe available.",
+                            rucakResponse.sastojci,
+                            rucakResponse.poboljsanja
+                        )
                     } catch (e: Exception) {
                         e.printStackTrace()
-                        showMealBottomSheet("Ručak", "No recipe available.")
+                        showMealBottomSheet(
+                            "Ručak",
+                            listOf("No ingredients available."),
+                            listOf("No benefits available.")
+                        )
                     }
                 }
             }
         }
 
         veceraView.setOnClickListener {
-            getResponse(planIshraneProfil(user,"Večera",null)) { response ->
+            getResponse(planIshraneProfil(user, "Večera", null)) { response ->
                 requireActivity().runOnUiThread {
                     try {
                         val veceraResponse = parsePlanObroka(response)
-                        showMealBottomSheet("Večera", veceraResponse.jelo ?: "No recipe available.")
+                        addIngredientsToShoppingList(veceraResponse.sastojci)
+                        showMealBottomSheet(
+                            veceraResponse.jelo ?: "No recipe available.",
+                            veceraResponse.sastojci,
+                            veceraResponse.poboljsanja
+                        )
                     } catch (e: Exception) {
                         e.printStackTrace()
-                        showMealBottomSheet("Večera", "No recipe available.")
+                        showMealBottomSheet(
+                            "Večera",
+                            listOf("No ingredients available."),
+                            listOf("No benefits available.")
+                        )
                     }
                 }
             }
@@ -121,16 +148,16 @@ class Home : Fragment() {
         return view
     }
 
-    private fun showMealBottomSheet(title: String, recipe: String) {
-        val bottomSheet = MealBottomSheetFragment.newInstance(title, recipe)
+    private fun showMealBottomSheet(title: String, ingredients: List<String>, benefits: List<String>) {
+        val bottomSheet = MealBottomSheetFragment.newInstance(title, ingredients, benefits)
         bottomSheet.show(parentFragmentManager, bottomSheet.tag)
     }
+
 
     fun getResponse(s: String, callback: (String) -> Unit){
         val url = "https://api.openai.com/v1/chat/completions"
         val secretKey = "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"
 
-        // Create JSON payload using JSONObject
         val messageObject = JSONObject().apply {
             put("role", "user")
             put("content", s)
@@ -227,6 +254,7 @@ class Home : Fragment() {
             // Izdvajanje sastojaka za doručak
             val sastojciArray = jsonObject.getJSONArray("sastojci")
             val sastojci = List(sastojciArray.length()) { sastojciArray.getString(it) }
+            brojStavki = sastojci.size
 
             try {
                 val poboljsanjaArray = jsonObject.getJSONArray("poboljsanja")
@@ -249,6 +277,16 @@ class Home : Fragment() {
         return """Napisi detaljan recept za pripremu ${jelo}.""".trimIndent()
     }
 
+    private fun addIngredientsToShoppingList(ingredients: List<String>) {
+        for (ingredient in ingredients) {
+            if (!shoppingItems.any { it.name.equals(ingredient, ignoreCase = true) }) {
+                shoppingItems.add(ShoppingItem(name = ingredient, isChecked = false))
+            }
+        }
+    }
 
-
+    private fun showShoppingListBottomSheet() {
+        val shoppingListBottomSheet = ShoppingListBottomSheetDialogFragment.newInstance(ArrayList(shoppingItems))
+        shoppingListBottomSheet.show(parentFragmentManager, shoppingListBottomSheet.tag)
+    }
 }

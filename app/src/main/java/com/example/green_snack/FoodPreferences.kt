@@ -31,14 +31,12 @@ class FoodPreferences : AppCompatActivity() {
     }
 
     private fun setupUI() {
-        // Navigation button to go to the previous activity
         val prevBtn = findViewById<Button>(R.id.prevButton)
         prevBtn.setOnClickListener {
             val intent = Intent(this, AllergiesInfo::class.java)
             startActivity(intent)
         }
 
-        // Setup RecyclerView
         val recyclerView: RecyclerView = findViewById(R.id.recyclerView)
         recyclerView.layoutManager = GridLayoutManager(this, 4)
         recyclerView.addItemDecoration(SpaceItemDecoration(16))
@@ -47,7 +45,6 @@ class FoodPreferences : AppCompatActivity() {
         categoryAdapter = CategoryAdapter(categoryItems) // Initialize the adapter
         recyclerView.adapter = categoryAdapter
 
-        // Button for incrementing and decrementing the number of meals
         val increaseBtn = findViewById<ImageButton>(R.id.incrementButton)
         val decreaseBtn = findViewById<ImageButton>(R.id.decrementButton)
         val br_jela = findViewById<TextView>(R.id.numberDisplay)

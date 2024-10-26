@@ -249,7 +249,7 @@
                     style="?android:attr/progressBarStyleHorizontal"
                     android:layout_width="match_parent"
                     android:layout_height="8dp"
-                    android:progress="60"
+                    android:progress="5"
                     android:max="100"
                     android:progressTint="@color/primary"
                     android:layout_marginBottom="16dp" />
@@ -264,17 +264,17 @@
                         android:id="@+id/total_items"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Stavke: 15"
-                        android:textColor="@color/black"
-                        android:textSize="16sp"
+                        android:layout_marginEnd="8dp"
                         android:fontFamily="@font/montserrat_regular"
-                        android:layout_marginEnd="8dp" />
+                        android:text="Stavke: 6"
+                        android:textColor="@color/black"
+                        android:textSize="16sp" />
 
                     <TextView
                         android:id="@+id/total_cost"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Total: 120.50€"
+                        android:text="Total: 12.50€"
                         android:textColor="@color/black"
                         android:textSize="16sp"
                         android:fontFamily="@font/montserrat_regular" />
@@ -349,8 +349,8 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="65 kg"
-                            android:textColor="@color/black"
-                            android:textSize="14sp"
+                            android:textColor="@color/white"
+                            android:textSize="8sp"
                             android:gravity="center"
                             android:layout_marginBottom="8dp"
                             android:fontFamily="@font/montserrat_regular" />
@@ -358,7 +358,7 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="15%"
+                            android:text="50%"
                             android:textColor="#00BFFF"
                             android:textSize="20sp"
                             android:gravity="center"
@@ -396,8 +396,8 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="50 C02/kg"
-                            android:textColor="@color/black"
-                            android:textSize="14sp"
+                            android:textColor="@color/white"
+                            android:textSize="8sp"
                             android:gravity="center"
                             android:layout_marginBottom="8dp"
                             android:fontFamily="@font/montserrat_regular" />
@@ -405,7 +405,7 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="10%"
+                            android:text="30%"
                             android:textColor="#FF6347"
                             android:textSize="20sp"
                             android:gravity="center"
@@ -442,8 +442,8 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="50€"
-                            android:textColor="@color/black"
-                            android:textSize="14sp"
+                            android:textColor="@color/white"
+                            android:textSize="8sp"
                             android:gravity="center"
                             android:layout_marginBottom="8dp"
                             android:fontFamily="@font/montserrat_regular" />
@@ -451,7 +451,7 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="20%"
+                            android:text="30%"
                             android:textColor="#FFD700"
                             android:textSize="20sp"
                             android:gravity="center"
