@@ -79,7 +79,8 @@ class Home : Fragment() {
             getResponse(planIshraneProfil(user,"Doručak",null)) { response ->
                 requireActivity().runOnUiThread {
                     try {
-                        showMealBottomSheet("Doručak", response ?: "No recipe available.")
+                        val dorucakResponse = parsePlanObroka(response)
+                        showMealBottomSheet("Doručak", dorucakResponse.jelo ?: "No recipe available.")
                     } catch (e: Exception) {
                         e.printStackTrace()
                         showMealBottomSheet("Doručak", "No recipe available.")
@@ -93,7 +94,8 @@ class Home : Fragment() {
             getResponse(planIshraneProfil(user,"Ručak",null)) { response ->
                 requireActivity().runOnUiThread {
                     try {
-                        showMealBottomSheet("Ručak", response ?: "No recipe available.")
+                        val rucakResponse = parsePlanObroka(response)
+                        showMealBottomSheet("Ručak", rucakResponse.jelo ?: "No recipe available.")
                     } catch (e: Exception) {
                         e.printStackTrace()
                         showMealBottomSheet("Ručak", "No recipe available.")
@@ -106,7 +108,8 @@ class Home : Fragment() {
             getResponse(planIshraneProfil(user,"Večera",null)) { response ->
                 requireActivity().runOnUiThread {
                     try {
-                        showMealBottomSheet("Večera", response ?: "No recipe available.")
+                        val veceraResponse = parsePlanObroka(response)
+                        showMealBottomSheet("Večera", veceraResponse.jelo ?: "No recipe available.")
                     } catch (e: Exception) {
                         e.printStackTrace()
                         showMealBottomSheet("Večera", "No recipe available.")
@@ -136,7 +139,7 @@ class Home : Fragment() {
         val requestBodyJson = JSONObject().apply {
             put("model", "gpt-4")
             put("messages", JSONArray().put(messageObject))
-            put("max_tokens", 250)
+            put("max_tokens", 500)
             put("temperature", 0)
         }
 
@@ -195,44 +198,51 @@ class Home : Fragment() {
         - Uključiti preferirane kategorije jela koliko god je moguće, uz balansiranje nutritivnih potreba.
         **Struktura odgovora**
         - Primjer izgleda odgovora:
-			${obrok}: naziv jela
-            Sastojci:
-                - sastojak 1
-                - sastojak 2
-                - ...
-            Ovim obrokom
-                - smanjujete CO2 emisije za x%
-                - štedite x% KM u odnosu na prosječan obrok
+            {
+            "obrok": "${obrok}",
+			"jelo": "naziv jela",
+            "sastojci": [
+                "sastojak 1",
+                "sastojak 2",
+                ...],
+            "poboljsanja": [
+                "smanjujete CO2 emisije za x%",
+                "štedite x% KM u odnosu na prosječan obrok",
+                "ostvarili ste x% manje otpada hrane nego inače"]
+            }
             
     """.trimIndent()
     }
 
-    fun parsePlanObroka(jsonString: String) {
+    fun parsePlanObroka(jsonString: String): GPTResponse {
         try {
-            // Pretvorite string u JSONObject
             val jsonObject = JSONObject(jsonString)
 
-            // Dobavite objekat "plan_obroka"
-            val planObroka = jsonObject.getJSONObject("plan_obroka")
-
-            // Dobavite objekat "doručak"
-            val dorucak = planObroka.getJSONObject("doručak")
+            val obrok = jsonObject.getString("obrok")
 
             // Izdvojite naziv doručka
-            val nazivDorucka = dorucak.getString("naziv")
+            val nazivDorucka = jsonObject.getString("jelo")
 
 
             // Izdvajanje sastojaka za doručak
-            val sastojci = dorucak.getJSONObject("sastojci")
+            val sastojciArray = jsonObject.getJSONArray("sastojci")
+            val sastojci = List(sastojciArray.length()) { sastojciArray.getString(it) }
 
-            // Iteracija kroz sastojke
-            for (key in sastojci.keys()) {
-                val kolicina = sastojci.getString(key)
+            try {
+                val poboljsanjaArray = jsonObject.getJSONArray("poboljsanja")
+                val poboljsanja = List(poboljsanjaArray.length()) { poboljsanjaArray.getString(it) }
+                return GPTResponse(obrok, nazivDorucka, sastojci, poboljsanja)
+            }catch (e: Exception){
+                val poboljsanjaArray = jsonObject.getJSONArray("poboljšanja")
+                val poboljsanja = List(poboljsanjaArray.length()) { poboljsanjaArray.getString(it) }
+                return GPTResponse(obrok, nazivDorucka, sastojci, poboljsanja)
             }
+
 
         } catch (e: Exception) {
             e.printStackTrace()
         }
+        return GPTResponse("Nema dovoljno podataka","", listOf(""),listOf(""))
     }
 
     fun recept(jelo: String): String {
