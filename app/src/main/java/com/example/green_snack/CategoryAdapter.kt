@@ -11,6 +11,7 @@ class CategoryAdapter(
 ) : RecyclerView.Adapter<CategoryAdapter.CategoryViewHolder>() {
 
     private val selectedPositions = mutableSetOf<Int>()
+
     inner class CategoryViewHolder(private val binding: ItemCategoryBinding) : RecyclerView.ViewHolder(binding.root) {
         fun bind(categoryItem: CategoryItem, isSelected: Boolean) {
             binding.itemImage.setImageResource(categoryItem.imageResId)
@@ -21,6 +22,7 @@ class CategoryAdapter(
                 binding.itemTitle.setTextColor(ContextCompat.getColor(binding.root.context, R.color.white))
             } else {
                 binding.root.background = ContextCompat.getDrawable(binding.root.context, R.drawable.item_background)
+                binding.itemTitle.setTextColor(ContextCompat.getColor(binding.root.context, R.color.black))
             }
 
             binding.root.setOnClickListener {
@@ -47,4 +49,9 @@ class CategoryAdapter(
     }
 
     override fun getItemCount(): Int = items.size
+
+    fun getSelectedCategories(): List<String> {
+        return selectedPositions.map { items[it].title }
+    }
 }
+
