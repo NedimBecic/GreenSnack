@@ -28,7 +28,7 @@ Access personalized statistics and graphs on:
 
 ## 📱 Video Preview
 
-<iframe width="560" height="315" src="![3BA8A7E6-05F4-4FBA-A35D-52280A67EB0E_1_102_o](https://github.com/user-attachments/assets/2202639b-5c65-45e3-b2e2-4ec796fb60e7)" frameborder="0" allowfullscreen> </iframe>
+https://drive.google.com/file/d/1ucvPvDqEjRPl0i3D7g9A084iroOQOwPq/view?usp=sharing
 
 
 ## 💡 Motivation
